@@ -13,15 +13,15 @@ let screen = UIScreen.main.bounds
 struct LoginView: View {
     
     private var aLoginViewModel = LoginViewModel()
-    @State private var emailID:String = ""
-    @State private var password:String = ""
+    @State private var emailID:String = "eve.holt@reqres.in"
+    @State private var password:String = "cityslicka"
     @State private var alertMessage = ""
     @State private var showAlert = false
     @State private var isLoading = false
     @State private var isLoginSuccessful = false // Track successful login
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack{
                 Color.white
                     .ignoresSafeArea(.all)
@@ -75,15 +75,15 @@ struct LoginView: View {
                     alertMessage = message
                 }
             }
-            
             .showAlert(title: "", message: alertMessage, isPresented:$showAlert)
-            .navigationBarBackButtonHidden(true)
             .background{
                 NavigationLink(destination: UserListView(), isActive: $isLoginSuccessful) {
                     EmptyView()
                 }
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 

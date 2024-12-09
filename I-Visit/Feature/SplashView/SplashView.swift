@@ -16,7 +16,7 @@ struct SplashView:View {
     @State private var isActive = false
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ZStack{
                 Color.clear
                     .ignoresSafeArea(.all)
@@ -28,7 +28,7 @@ struct SplashView:View {
             .onAppear{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8){
                     if let session = UserDataManager.shared.homeScreen, session {
-                        designationView = AnyView(LoginView())
+                        designationView = AnyView(UserListView())
                     }else{
                         designationView = AnyView(LoginView())
                     }

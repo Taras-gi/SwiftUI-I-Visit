@@ -29,6 +29,7 @@ class APIManager {
         request.httpMethod = methodType.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue(token ?? "", forHTTPHeaderField: "Token")
+        request.addValue("6149ac924e29ce2338d6f836", forHTTPHeaderField: "app-id")
         URLSession.shared.dataTaskPublisher(for: request)
             .tryMap{ data, response in
                 guard let httpResponse = response as? HTTPURLResponse else {
