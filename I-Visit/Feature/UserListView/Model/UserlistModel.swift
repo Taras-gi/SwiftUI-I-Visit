@@ -12,7 +12,7 @@ struct UserListModel: Codable {
     let total, page, limit: Int?
 }
 
-// MARK: - Datum
+// MARK: - UserList
 struct UserList: Codable,Hashable {
     let id: String?
     let title: Title?

@@ -7,10 +7,12 @@
 
 import UIKit
 
+// MARK: - LoginModel
 struct LoginModel: Codable {
     var email, password, id, createdAt: String?
 }
 
+// MARK: - LoginRequestModel
 struct LoginRequestModel: Codable {
     var email, password:String
     

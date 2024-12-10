@@ -14,6 +14,7 @@ enum HTTPMeathod:String {
 }
 
 enum ApiType:String {
-    case login    = "api/login"
-    case userList = "user?"
+    case login       = "api/login"
+    case userList    = "user?"
+    case userDetails = "user/"
 }

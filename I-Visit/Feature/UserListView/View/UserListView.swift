@@ -15,14 +15,13 @@ struct UserListView :View {
     @State private var alertMessage = ""
     @State private var showAlert = false
     @State private var isLoading = false
-    @State private var userListData: [UserList] = []
 
     let columns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing:20), count:2)
     
     var body: some View {
         NavigationView{
             ZStack{
-                Color.pink
+                Color.clear
                     .ignoresSafeArea(.all)
                 VStack{
                     ScrollView(.vertical,showsIndicators: true){
@@ -30,7 +29,7 @@ struct UserListView :View {
                             LazyVGrid(columns: columns,spacing:15)  {
                                 ForEach(self.aUserListModel.UserListData ?? [] , id: \.self) { data in
                                     NavigationLink {
-                                        //                                    ColorCodeView()
+                                        UserDetailView(userData: data)
                                     }label:{
                                         UserCollectinCell(userList: data)
                                     }
@@ -51,12 +50,9 @@ struct UserListView :View {
                 }
             }
             .padding(.top)
-            .background(.pink)
+            .background(.pink.opacity(0.8))
             
             .onReceive(aUserListModel.$UserListData) { userData in
-                if let userData = userData {
-                    userListData = userData
-                }
                 isLoading = false
             }
             

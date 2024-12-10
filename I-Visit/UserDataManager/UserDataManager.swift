@@ -11,18 +11,6 @@ final class UserDataManager {
 
     let defaults = UserDefaults.standard
     static let shared = UserDataManager()
-
-    var token: String? {
-        get {
-            if let token = defaults.object(forKey: "apptoken") as? String {
-                return token
-            }
-            return nil
-        }
-        set {
-            defaults.set(newValue, forKey: "apptoken")
-        }
-    }
     
     var homeScreen:Bool? {
         get {

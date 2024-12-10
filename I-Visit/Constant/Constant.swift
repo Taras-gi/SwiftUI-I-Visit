@@ -18,6 +18,10 @@ enum Constant {
         static let apiError        = "Something went wrong"
     }
     
+    enum Splash {
+        static let splashIcon      = "splashIcon"
+    }
+    
     enum Login {
         static let enterEmail      = "Enter your Email"
         static let enterPassword   = "Enter your Password"
@@ -25,6 +29,16 @@ enum Constant {
         static let login           = "Login"
         static let hidePassword    = "eye.slash.fill"
         static let showPassword    = "eye.fill"
+    }
+    
+    enum UserDetail{
+        static let name         = "Name :"
+        static let gender       = "Gender :"
+        static let dob          = "Date of Birth :"
+        static let registerDate = "Register Date :"
+        static let email        = "Email :"
+        static let phone        = "Phone :"
+        static let address      = "Address :"
     }
     
 

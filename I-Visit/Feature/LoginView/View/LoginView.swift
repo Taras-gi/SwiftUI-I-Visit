@@ -13,8 +13,8 @@ let screen = UIScreen.main.bounds
 struct LoginView: View {
     
     private var aLoginViewModel = LoginViewModel()
-    @State private var emailID:String = "eve.holt@reqres.in"
-    @State private var password:String = "cityslicka"
+    @State private var emailID:String = ""
+    @State private var password:String = ""
     @State private var alertMessage = ""
     @State private var showAlert = false
     @State private var isLoading = false

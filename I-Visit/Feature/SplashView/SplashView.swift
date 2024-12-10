@@ -20,7 +20,7 @@ struct SplashView:View {
             ZStack{
                 Color.clear
                     .ignoresSafeArea(.all)
-                Image("splashIcon")
+                Image(Constant.Splash.splashIcon)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width:250,height: 250)
